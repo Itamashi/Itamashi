@@ -1,0 +1,25 @@
+public class CajaDeVertices {
+    private double x1, y1; // Coordenadas del vértice superior izquierdo
+    private double x2, y2; // Coordenadas del vértice inferior derecho
+
+    public CajaDeVertices(double x1, double y1, double x2, double y2) {
+        this.x1 = x1;
+        this.y1 = y1;
+        this.x2 = x2;
+        this.y2 = y2;
+    }
+
+    public double calcularArea() {
+        return Math.abs((x2 - x1) * (y2 - y1));
+    }
+
+    public double calcularPerimetro() {
+        return 2 * (Math.abs(x2 - x1) + Math.abs(y2 - y1));
+    }
+
+    public static void main(String[] args) {
+        CajaDeVertices caja = new CajaDeVertices(1.0, 2.0, 4.0, 5.0);
+        System.out.println("Área de la caja: " + caja.calcularArea());
+        System.out.println("Perímetro de la caja: " + caja.calcularPerimetro());
+    }
+}
